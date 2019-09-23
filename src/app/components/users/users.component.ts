@@ -6,12 +6,14 @@ import { User } from 'src/app/models/User';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent implements OnInit {
 users:User [];
   constructor() { }
   
-  showExtended=true;
-  loaded=true;
+  showExtended=true
+  loaded=true
+  enableAdd:boolean=true
 
 
   ngOnInit() {
@@ -24,7 +26,8 @@ users:User [];
           city:'jhb',
           state:'malb',
           street:'hope'
-      }
+      },
+      image:'http://lorempixel.com/600/600/people/1'
       },
       {
         firstname:'aaron',
@@ -34,7 +37,8 @@ users:User [];
             city:'jhb',
             state:'malb',
             street:'str hope'
-        }
+        },
+        image:'http://lorempixel.com/600/600/people/2'
       },{
 
         firstname:'GUNDO',
@@ -44,7 +48,8 @@ users:User [];
             city:'THOHOYANDOU',
             state:'TSHIDZINI',
             street:'MAGWANA STREET'
-        }
+        },
+        image:'http://lorempixel.com/600/600/people/4'
       }
   ];
 

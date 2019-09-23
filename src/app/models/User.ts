@@ -7,4 +7,5 @@ export interface User{
         state?:string
         street?:string
     }
+    image?:string
 }
