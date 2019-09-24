@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
 users:User [];
   constructor() { }
   
-  showExtended=true
+  showExtended=false
   loaded=true
   enableAdd:boolean=true
   
@@ -29,7 +29,7 @@ users:User [];
       },
      
       isActive:true,
-     
+      hide:true,
       Register:new Date('1993/09/22  09:30:00')
       },
       {
@@ -43,7 +43,7 @@ users:User [];
         },
    
         isActive:false,
-      
+      hide:true,
         Register:new Date('1997/01/28 08:00:00')
       },{
 
@@ -57,7 +57,7 @@ users:User [];
         },
        
         isActive:true,
-      
+        hide:true,
         Register : new Date('2007/01/28 20:00:00')
       }
   ];
@@ -66,13 +66,13 @@ users:User [];
      
 
 
-this.AddUser({
+// this.AddUser({
 
-  firstname:'HAngwani',
-  lastname:'Chipz',
-  age:12
+//   firstname:'HAngwani',
+//   lastname:'Chipz',
+//   age:12
  
-})
+// })
     }// ngonit close
 
 
