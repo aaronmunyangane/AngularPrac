@@ -1,8 +1,10 @@
 <div class="container" style="text-align: center">
 <h1>users</h1>
-   <button [disabled]="!enableAdd" class="btn btn-primary btn-block mb-3">Add user</button>
-      <ul class="list-unstyled"  *ngIf="loaded && users?.length > 0">
-          <li class="card card-body mb-2"  *ngFor="let user of users">
+ 
+   <button   [disabled]="!enableAdd" class="btn btn-block mb-3 " [ngClass]="currentClasses">Add user</button>
+
+      <ul class="list-unstyled"  *ngIf="loaded && users?.length > 0" >
+          <li class="card card-body mb-2"  *ngFor="let user of users" [class.bg-light]='user.isActive' [style.border-color]="user.isActive ? 'green':''" >
 
               <div class="row">
               <div class="col-sm-4">
@@ -10,16 +12,17 @@
               </div>
               <div class="col-sm-8">
 
-              <h3>{{user.firstname}}    {{user.lastname}}</h3>  
+              <h3 [ngStyle]="currentStyle">{{user.firstname}}    {{user.lastname}}</h3>  
 <ul class="list-group" *ngIf="showExtended && user.age && user.address && user.image">
       
-          <li class ="list-group-item">{{user.age}}</li>
-          <li class ="list-group-item">{{user.address.city}},{{user.address.state}},{{user.address.street}}</li>
-</ul>
+          <li class ="list-group-item"> Age: {{user.age}}</li>
+          <li class ="list-group-item">Address: {{user.address.city}},{{user.address.state}},{{user.address.street}}</li>
+            <li class="list-group-item">Balance: {{user.Balance |currency:"R"}}</li>
+            <li class="list-group-item">Joined: {{user.Register |date }} </li>
+        </ul>
 
       </div>
   </div>
 
 <h4 *ngIf="users.length == 0">no users found</h4>
-<h4 *ngIf="!loaded">Loading users</h4>
-
+<h4 *ngIf="!loaded">Loading users</h4>``
