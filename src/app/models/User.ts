@@ -7,8 +7,8 @@ export interface User{
         state?:string,
         street?:string,
     }
-    image?:string,
+
     isActive?:boolean,
-    Balance?:number,
+   
     Register?:any
 }
