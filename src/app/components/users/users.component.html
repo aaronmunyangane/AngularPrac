@@ -1,18 +1,53 @@
-<div class="container" style="text-align: center">
+
+<br>
+<br>
+<div class="container">
+ <button (click)="hiden=!hiden" class="btn btn-dark mb-3">Add user</button>
+<div class="card card-body mb-3" *ngIf="hiden"> 
+  </div>
+<form action="">
+<h2>Add User</h2>
+
+  <div class="form-group">
+      <label list-group-item>firstname:</label>
+      <input type="text" [(ngModel)]="user.firstname"  class="form-control" 
+      name="firstname">
+  </div>
+ 
+  <div class="form-group">
+      <label>lastname:</label>
+      <input type="text" [(ngModel)]="user.lastname"  
+      class="form-control" name="firstname">
+  </div>
+  <div class="form-group">
+      <label >age:</label>
+      <input type="number" [(ngModel)]="user.age" 
+       class="form-control" name="firstname">
+  </div>
+  <div class="form-group">
+      <label >joined:</label>
+      <input type="text" [(ngModel)]="user.Register"  
+      class="form-control" name="firstname">
+  </div>
+   
+ <button   (click)="AddUser()" class="btn btn-dark mb-2 btn-block" 
+[disabled]="user.firstname == '' || user.lastname == '' ">add user</button>
+</form>
+</div>
+<div class="container">
 <h1>users</h1>
  
-   <button (click)="AddUser({firstname:'Masindi',lastname:'muny',isActive:true})"  [disabled]="!enableAdd" 
-   class="btn btn-block mb-3 " >Add user</button>
+  
 
       <ul class="list-unstyled"  *ngIf="loaded && users?.length > 0" >
           <li class="card card-body mb-2"  *ngFor="let user of users" >
 
               
               <h3>{{user.firstname}}    {{user.lastname}}
-                 <!-- <small *ngIf="user.age && user.Address"> -->
-                <button (click)="user.hide=!user.hide" class="btn btn-dark btn-sm">
+                 
+                 <button (click)="user.hide=!user.hide" class="btn btn-dark btn-sm">
                   <i [ngClass]="user.hide ? 'fa fa-plus':'fa fa-minus'"></i></button>
-              <!-- </small> -->
+              
               </h3>  
 <ul class="list-group" *ngIf="!user.hide && user.age && user.address ">
       

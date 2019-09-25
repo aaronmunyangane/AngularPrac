@@ -8,15 +8,27 @@ import { User } from 'src/app/models/User';
 })
 
 export class UsersComponent implements OnInit {
+  user:User={
+
+    firstname:'',
+    lastname:'',
+    age:null,
+    address:{
+        city:'',
+        state:'',
+        street:''
+    }
+  }
 users:User [];
   constructor() { }
   
   showExtended=false
   loaded=true
   enableAdd:boolean=true
-  
+  hiden:boolean =false
 
   ngOnInit() {
+    
      this.users =[
      {
       firstname:'aaron',
@@ -76,10 +88,25 @@ users:User [];
     }// ngonit close
 
 
-    AddUser(user:User){
-      this.users.push(user)
+    AddUser(){
+      this.user.isActive=true
+      this.user.Register=new Date();
+
+      this.users.unshift(this.user)
+
+      this.user={
+
+        firstname:'',
+        lastname:'',
+        age:null,
+        address:{
+            city:'',
+            state:'',
+            street:''
+        }
     }
-
-
-
   }
+}
+
+
+  
