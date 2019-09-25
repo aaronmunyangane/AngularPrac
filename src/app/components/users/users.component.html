@@ -22,12 +22,27 @@
   <div class="form-group">
       <label >age:</label>
       <input type="number" [(ngModel)]="user.age" 
-       class="form-control" name="firstname">
+       class="form-control" name="age">
+  </div>
+  <div class="form-group">
+      <label>Street Adddress:</label>
+      <input type="text" [(ngModel)]="user.address.street"  
+      class="form-control" name="firstname">
+  </div>
+  <div class="form-group">
+      <label>City:</label>
+      <input type="text" [(ngModel)]="user.address.city"  
+      class="form-control" name="city">
+  </div>
+  <div class="form-group">
+      <label>state:</label>
+      <input type="text" [(ngModel)]="user.address.state" 
+      class="form-control" name="state">
   </div>
   <div class="form-group">
       <label >joined:</label>
       <input type="text" [(ngModel)]="user.Register"  
-      class="form-control" name="firstname">
+      class="form-control" name="Register">
   </div>
    
  <button   (click)="AddUser()" class="btn btn-dark mb-2 btn-block" 
