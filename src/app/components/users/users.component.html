@@ -1,10 +1,10 @@
 
 <br>
 <br>
-<div class="container">
+<div class="container" style="text-align: center">
  <button (click)="hiden=!hiden" class="btn btn-dark mb-3">Add user</button>
 <div class="card card-body mb-3" *ngIf="hiden"> 
-  </div>
+  
 <form action="">
 <h2>Add User</h2>
 
@@ -33,6 +33,7 @@
  <button   (click)="AddUser()" class="btn btn-dark mb-2 btn-block" 
 [disabled]="user.firstname == '' || user.lastname == '' ">add user</button>
 </form>
+</div>
 </div>
 <div class="container">
 <h1>users</h1>
